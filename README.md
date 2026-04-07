@@ -1,25 +1,25 @@
-# 🚚 Supply Chain Demand Forecasting & Anomaly Detection
+# Supply Chain Demand Forecasting & Anomaly Detection
 
-> A full-stack data science project showcasing machine learning, statistical analysis, and business intelligence dashboards for supply chain optimisation.
-
----
-
-## 📌 Project Overview
-
-This project applies machine learning and statistical techniques to real-world logistics data to:
-
-- **Forecast demand** using Prophet (time-series) and ensemble models (Random Forest, XGBoost)
-- **Detect anomalies** in shipment data using Isolation Forest, Z-Score, IQR, and DBSCAN
-- **Visualise insights** through interactive Power BI dashboards
-- **Validate findings** with rigorous statistical analysis in R
+A data science project applying machine learning and statistical analysis to real-world logistics data to forecast demand and detect supply chain anomalies.
 
 ---
 
-## 🗂️ Repository Structure
+## Project Overview
+
+This project covers the end-to-end data science workflow applied to a logistics dataset:
+
+- Forecast demand using time-series (Prophet) and ensemble models (Random Forest, XGBoost)
+- Detect anomalies in shipment data using Isolation Forest, Z-Score, IQR, and DBSCAN
+- Validate findings with statistical analysis in R (ARIMA, correlation, stationarity tests)
+- Visualise insights through a Power BI dashboard
+
+---
+
+## Repository Structure
 
 ```
 supply-chain-ml/
-├── data/                        # Raw and processed datasets (gitignored for large files)
+├── data/                        # Raw and processed datasets (gitignored)
 │   ├── cleaned_data.csv
 │   ├── detected_anomalies.csv
 │   └── model_results.csv
@@ -36,34 +36,31 @@ supply-chain-ml/
 │   ├── analysis.R
 │   └── requirements.R
 │
-├── dashboards/                  # BI dashboard files and guides
+├── dashboards/                  # Power BI dashboard files
 │   ├── powerbi_guide.md
 │   ├── supply_chain_dashboard.pbix
 │   └── supply_chain_dashboard.pdf
-│
-├── notebooks/                   # Jupyter notebooks for exploration
 │
 └── README.md
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Tool | Purpose |
 |---|---|
-| **Python** | ML pipeline, feature engineering, model training |
-| **R** | Statistical analysis, ARIMA forecasting, correlation analysis |
-| **scikit-learn** | Random Forest, Isolation Forest, DBSCAN |
-| **XGBoost** | Gradient boosted regression |
-| **Prophet** | Time-series demand forecasting |
-| **Power BI** | Interactive KPI & anomaly reporting dashboards |
-| **VS Code** | Development environment (with Claude AI co-pilot) |
-| **GitHub** | Version control & project showcase |
+| Python | ML pipeline, feature engineering, model training |
+| R | Statistical analysis, ARIMA forecasting, correlation analysis |
+| scikit-learn | Random Forest, Isolation Forest, DBSCAN |
+| XGBoost | Gradient boosted regression |
+| Prophet | Time-series demand forecasting |
+| Power BI | Interactive KPI & anomaly reporting dashboards |
+| GitHub | Version control |
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 **Source:** [Logistics Supply Chain Real World Data — Kaggle](https://www.kaggle.com/datasets/pushpitkamboj/logistics-data-containing-real-world-data)
 
@@ -71,41 +68,41 @@ Download the dataset and place the CSV file in the `data/` folder, renaming it t
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/supply-chain-ml.git
+git clone https://github.com/briansantoso-eng/supply-chain-ml.git
 cd supply-chain-ml
 ```
 
 ### 2. Install Python Dependencies
+
 ```bash
+python -m venv venv
+venv\Scripts\activate
 pip install -r python/requirements.txt
 ```
 
 ### 3. Install R Dependencies
+
 ```r
 source("R/requirements.R")
 ```
 
 ### 4. Download the Dataset
-- Go to [Kaggle dataset link](https://www.kaggle.com/datasets/pushpitkamboj/logistics-data-containing-real-world-data)
-- Download and place the CSV in `data/logistics_data.csv`
 
-### 5. Run the Pipeline (in order)
+Go to the [Kaggle dataset](https://www.kaggle.com/datasets/pushpitkamboj/logistics-data-containing-real-world-data), download and place the CSV at `data/logistics_data.csv`.
+
+### 5. Run the Python Pipeline (in order)
+
 ```bash
-# Step 1: Clean and preprocess data
-python python/01_data_preprocessing.py
-
-# Step 2: Train forecasting models
-python python/02_demand_forecasting.py
-
-# Step 3: Detect anomalies
-python python/03_anomaly_detection.py
-
-# Step 4: Generate evaluation report
-python python/04_model_evaluation.py
+cd python
+python 01_data_preprocessing.py
+python 02_demand_forecasting.py
+python 03_anomaly_detection.py
+python 04_model_evaluation.py
 ```
 
 ### 6. Run R Analysis
@@ -114,26 +111,24 @@ python python/04_model_evaluation.py
 source("R/analysis.R")
 ```
 
-R provides statistical validation alongside the Python ML pipeline:
+R produces statistical outputs to complement the Python ML results:
 
-| Output | Purpose |
+| Output | Description |
 |---|---|
 | `R_distribution.png` | Distribution of order quantities |
-| `R_time_series.png` | Demand trend over time with LOESS smoothing |
-| `R_arima_forecast.png` | Classical ARIMA 30-period forecast |
+| `R_time_series.png` | Demand trend with LOESS smoothing |
+| `R_arima_forecast.png` | ARIMA 30-period forecast |
 | `R_category_breakdown.png` | Top 15 categories by demand |
 | `R_correlation.png` | Feature correlation matrix |
 | `R_anomaly_distribution.png` | Z-score anomaly distribution |
 
-> Using both Python and R demonstrates the full data science stack: Python for ML modelling, R for statistical rigour, Power BI for business reporting.
+### 7. Open the Dashboard
 
-### 7. Build Dashboards
-- Follow `dashboards/powerbi_guide.md` for Power BI
-- Or open `dashboards/supply_chain_dashboard.pbix` directly
+Open `dashboards/supply_chain_dashboard.pbix` in Power BI Desktop, or follow `dashboards/powerbi_guide.md` to build it from scratch.
 
 ---
 
-## 📈 Key Results
+## Key Results
 
 | Model | MAE | RMSE | R² |
 |---|---|---|---|
@@ -143,11 +138,11 @@ R provides statistical validation alongside the Python ML pipeline:
 
 **Anomalies detected:** 67 records flagged across 4 detection methods (anomaly rate: 43%).
 
-> Random Forest and XGBoost significantly outperform Prophet, achieving near-perfect R² of 0.99. Prophet underperforms on this dataset as demand patterns are feature-driven rather than purely time-series.
+Random Forest and XGBoost significantly outperform Prophet on this dataset. Prophet underperforms because demand patterns here are feature-driven rather than purely time-series — ensemble models that incorporate product category, seasonality features, and order attributes achieve near-perfect R² of 0.99.
 
 ---
 
-## 📊 Power BI Dashboard
+## Power BI Dashboard
 
 **Download:** [supply_chain_dashboard.pbix](dashboards/supply_chain_dashboard.pbix) | [supply_chain_dashboard.pdf](dashboards/supply_chain_dashboard.pdf)
 
@@ -165,19 +160,7 @@ R provides statistical validation alongside the Python ML pipeline:
 
 ---
 
-## 🔧 Configuration
-
-Before running, update the column name constants at the top of each script to match your dataset:
-
-```python
-TARGET_COL   = "quantity"        # Column to forecast/detect anomalies in
-DATE_COL     = "order_date"      # Primary date column
-CATEGORY_COL = "product_category"# Grouping column
-```
-
----
-
-## 📁 Outputs
+## Outputs
 
 After running the full pipeline, the `data/` folder will contain:
 
@@ -186,20 +169,21 @@ After running the full pipeline, the `data/` folder will contain:
 - `model_results.csv` — model performance comparison
 - `prophet_forecast.png` — Prophet forecast chart
 - `feature_importance.png` — Random Forest feature importances
-- `anomaly_scatter.png` — anomaly visualisation
+- `anomaly_scatter.png` — anomaly scatter plot
 - `model_comparison.png` — model metrics bar chart
 - `R_*.png` — R-generated statistical charts
 
 ---
 
-## 👤 Author
+## Author
 
 **Brian Santoso**
-- GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/YOUR_PROFILE)
+
+- GitHub: [briansantoso-eng](https://github.com/briansantoso-eng)
+- LinkedIn: [brian-santoso](https://www.linkedin.com/in/brian-santoso/)
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
