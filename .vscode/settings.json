@@ -1,0 +1,25 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.rulers": [
+    100
+  ],
+  "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/venv": true,
+    "**/.ipynb_checkpoints": true
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right"
+  },
+  "r.rterm.windows": "C:\\Program Files\\R\\R-4.3.0\\bin\\x64\\R.exe",
+  "r.rterm.mac": "/usr/local/bin/R",
+  "r.rterm.linux": "/usr/bin/R",
+  "python-envs.defaultEnvManager": "ms-python.python:system"
+}

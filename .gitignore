@@ -1,0 +1,40 @@
+# Data files (large — use Git LFS or keep local)
+data/*.csv
+data/*.png
+data/*.jpg
+!data/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+.env
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Trained models (large — add selectively)
+python/models/*.pkl
+python/models/*.joblib
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# VS Code
+.vscode/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter
+*.ipynb_checkpoints

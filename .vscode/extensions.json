@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.black-formatter",
+    "ms-python.pylint",
+    "ms-toolsai.jupyter",
+    "reditorsupport.r",
+    "rdebugger.r-debugger",
+    "mechatroner.rainbow-csv",
+    "ms-vscode.vscode-json",
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    "streetsidesoftware.code-spell-checker",
+    "christian-kohler.path-intellisense",
+    "njpwerner.autodocstring"
+  ]
+}
