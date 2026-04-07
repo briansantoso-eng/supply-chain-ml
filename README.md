@@ -37,9 +37,11 @@ supply-chain-ml/
 │   └── requirements.R
 │
 ├── dashboards/                  # Power BI dashboard files
-│   ├── powerbi_guide.md
-│   ├── supply_chain_dashboard.pbix
-│   └── supply_chain_dashboard.pdf
+│   ├── powerbi/
+│   │   ├── supply_chain_dashboard.pbix
+│   │   └── supply_chain_dashboard.pdf
+│   ├── screenshots/
+│   └── powerbi_guide.md
 │
 └── README.md
 ```
@@ -144,19 +146,19 @@ Random Forest and XGBoost significantly outperform Prophet on this dataset. Prop
 
 ## Power BI Dashboard
 
-**Download:** [supply_chain_dashboard.pbix](dashboards/supply_chain_dashboard.pbix) | [supply_chain_dashboard.pdf](dashboards/supply_chain_dashboard.pdf)
+**Download:** [supply_chain_dashboard.pbix](dashboards/powerbi/supply_chain_dashboard.pbix) | [supply_chain_dashboard.pdf](dashboards/powerbi/supply_chain_dashboard.pdf)
 
 ### Page 1 — Executive Summary
 
-![Executive Summary](dashboards/screenshots/page1.png)
+![Executive Summary](dashboards/screenshots/executive_summary.png)
 
 ### Page 2 — Anomaly Report
 
-![Anomaly Report](dashboards/screenshots/page2.png)
+![Anomaly Report](dashboards/screenshots/anomaly_report.png)
 
 ### Page 3 — ML Model Comparison
 
-![Model Comparison](dashboards/screenshots/page3.png)
+![Model Comparison](dashboards/screenshots/ML_model.png)
 
 ---
 
