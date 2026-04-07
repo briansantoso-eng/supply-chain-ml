@@ -15,6 +15,43 @@ This project covers the end-to-end data science workflow applied to a logistics 
 
 ---
 
+## Pipeline
+
+```
+Raw Data (Kaggle)
+      │
+      ▼
+01 Data Preprocessing
+   └── Clean, parse dates, engineer time features
+      │
+      ▼
+02 Demand Forecasting
+   ├── Random Forest
+   ├── XGBoost
+   └── Prophet (time-series)
+      │
+      ▼
+03 Anomaly Detection
+   ├── Isolation Forest
+   ├── Z-Score
+   ├── IQR
+   └── DBSCAN
+      │
+      ▼
+04 Model Evaluation
+   └── MAE, RMSE, R² comparison
+      │
+      ▼
+R Statistical Analysis
+   └── ARIMA, correlation matrix, stationarity tests
+      │
+      ▼
+Power BI Dashboard
+   └── Executive Summary / Anomaly Report / ML Comparison
+```
+
+---
+
 ## Repository Structure
 
 ```
@@ -42,6 +79,8 @@ supply-chain-ml/
 │   │   └── supply_chain_dashboard.pdf
 │   ├── screenshots/
 │   └── powerbi_guide.md
+│
+├── assets/                      # Charts and visualisations
 │
 └── README.md
 ```
@@ -126,7 +165,7 @@ R produces statistical outputs to complement the Python ML results:
 
 ### 7. Open the Dashboard
 
-Open `dashboards/supply_chain_dashboard.pbix` in Power BI Desktop, or follow `dashboards/powerbi_guide.md` to build it from scratch.
+Open `dashboards/powerbi/supply_chain_dashboard.pbix` in Power BI Desktop, or follow `dashboards/powerbi_guide.md` to build it from scratch.
 
 ---
 
@@ -141,6 +180,30 @@ Open `dashboards/supply_chain_dashboard.pbix` in Power BI Desktop, or follow `da
 **Anomalies detected:** 67 records flagged across 4 detection methods (anomaly rate: 43%).
 
 Random Forest and XGBoost significantly outperform Prophet on this dataset. Prophet underperforms because demand patterns here are feature-driven rather than purely time-series — ensemble models that incorporate product category, seasonality features, and order attributes achieve near-perfect R² of 0.99.
+
+---
+
+## Model Outputs
+
+### Demand Forecast (Prophet)
+
+![Prophet Forecast](assets/prophet_forecast.png)
+
+### Feature Importance (Random Forest)
+
+![Feature Importance](assets/feature_importance.png)
+
+### Model Comparison
+
+![Model Comparison](assets/model_comparison.png)
+
+### Anomaly Detection
+
+![Anomaly Scatter](assets/anomaly_scatter.png)
+
+### Feature Correlation Matrix
+
+![Correlation Heatmap](assets/correlation_heatmap.png)
 
 ---
 
